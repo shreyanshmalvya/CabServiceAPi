@@ -12,8 +12,11 @@ app.use((req,res,next) =>{
     //for options request
     if(req.method === 'OPTIONS'){
         res.header('Access-Control-Allow-Methods', 'GET, DELETE, POST')
+        return res.status(200).json({})
     }
+    console.log("was here")
     next();
+
 });
 app.use(cors())
 
