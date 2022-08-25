@@ -15,15 +15,7 @@ function App() {
 
   const getData = async (e) => {
     e.preventDefault();
-    const response = await axios({
-      method: 'POST',
-      url: `https://git.heroku.com/cabservice-v1.git/ride/${city}/${vehicleType}`,
-      headers: { "Content-Type": "application/json" },
-      data: {
-        origins: origins,
-        destinations: destinations
-      }
-    });
+    const response = await axios.get(`https://git.heroku.com/cabservice-v1.git/ride/${city}/${vehicleType}/${origins}/${destinations}`);
     const result = response.data;
     if (result.message) {
       alert("Email needed");
