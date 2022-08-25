@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 
 //handling CORS errors, access-control-allow- (origin, headers, methods)
 app.use((req,res,next) =>{
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', 'https://cabservice-v1.web.app/');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     //for options request
     if(req.method === 'OPTIONS'){
