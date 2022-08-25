@@ -17,7 +17,19 @@ app.use(bodyParser.json());
 mongoose.connect(`mongodb+srv://node-fare:${process.env.MONGO_PASS}@node-fare.arqbutn.mongodb.net/?retryWrites=true&w=majority`);
 
 //handling CORS errors, access-control-allow- (origin, headers, methods)
-app.use(cors());
+const corsOpts = {
+    origin: '*',
+  
+    methods: [
+      'GET',
+      'POST',
+    ],
+  
+    allowedHeaders: [
+      'Content-Type',
+    ],
+  };
+app.use(cors(corsOpts));
 
 // we use routes to directly route our data 
 
