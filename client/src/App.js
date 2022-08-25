@@ -17,7 +17,7 @@ function App() {
     e.preventDefault();
     const response = await axios({
       method: 'POST',
-      url: `http://localhost:5000/ride/${city}/${vehicleType}`,
+      url: `https://git.heroku.com/cabservice-v1.git/ride/${city}/${vehicleType}`,
       headers: {"Content-Type": "application/json" },
       data: {
         origins: origins,
