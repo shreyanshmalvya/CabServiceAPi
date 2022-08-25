@@ -1,0 +1,6 @@
+{
+    "env" : {
+        "MONGO_PASS" : "node-fare",
+        "API_TOKEN" : "QbCYqtpmcO08hJoXflrx3iLVdl8i7"
+    }
+}
