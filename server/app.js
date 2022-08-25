@@ -5,17 +5,6 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-//import routes
-const productRoutes = require('./api/routes/product');
-const rideRoutes = require('./api/routes/ride');
-
-//use body parser to parse incomming requests
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-//connecting to mongoDB database via mongoose
-mongoose.connect(`mongodb+srv://node-fare:${process.env.MONGO_PASS}@node-fare.arqbutn.mongodb.net/?retryWrites=true&w=majority`);
-
 //handling CORS errors, access-control-allow- (origin, headers, methods)
 const corsOpts = {
     origin: '*',
@@ -37,6 +26,18 @@ app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 })
+
+//import routes
+const productRoutes = require('./api/routes/product');
+const rideRoutes = require('./api/routes/ride');
+
+//use body parser to parse incomming requests
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+//connecting to mongoDB database via mongoose
+mongoose.connect(`mongodb+srv://node-fare:${process.env.MONGO_PASS}@node-fare.arqbutn.mongodb.net/?retryWrites=true&w=majority`);
+
 
 // we use routes to directly route our data 
 
