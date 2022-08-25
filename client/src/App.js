@@ -18,16 +18,16 @@ function App() {
     const response = await axios({
       method: 'POST',
       url: `https://git.heroku.com/cabservice-v1.git/ride/${city}/${vehicleType}`,
-      headers: {"Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
       data: {
         origins: origins,
         destinations: destinations
       }
     });
     const result = response.data;
-    if(result.message){
+    if (result.message) {
       alert("Email needed");
-    }else{
+    } else {
       alert("Ride found, Email not needed");
     }
   }
@@ -64,6 +64,11 @@ function App() {
           <input type='text' placeholder='Destination' onChange={(e) => setDestinations(e.target.value)} />
         </div>
         <button className='submitBtn' type='submit' onClick={(e) => getData(e)}>Get Data</button>
+        <div className='sampleData'>
+          Sample Data: <br />
+          <b>ORIGIN</b> <span>Westminster Abbey, 20 Deans Yd, Westminster, London SW1P 3PA, United Kingdom</span>
+          <b>DESTINATIONS</b> <span>St John's Church, North End Rd, Fulham, London SW6 1PB, United Kingdom</span>
+        </div>
       </div>
     </div>
   );
