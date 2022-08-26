@@ -43,6 +43,7 @@ app.use('/ride', rideRoutes);
 app.use((req, res, next) => {
     const error = new Error();
     error.status = 404;
+    error.message = 'Not Found';
     next(error);
 });
 
