@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 //handling CORS errors, access-control-allow- (origin, headers, methods)
+app.use(cors())
 app.use((req,res,next) =>{
     console.log("came here")
     res.header('Access-Control-Allow-Origin', '*, https://cabservice-v1.web.app/');
@@ -18,7 +19,6 @@ app.use((req,res,next) =>{
     next();
 
 });
-app.use(cors())
 
 //import routes
 const productRoutes = require('./api/routes/product');
