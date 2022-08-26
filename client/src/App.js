@@ -15,7 +15,7 @@ function App() {
 
   const getData = async (e) => {
     e.preventDefault();
-    const response = await axios.get(`https://git.heroku.com/cabservice-v1.git/ride/${city}/${vehicleType}/${origins}/${destinations}`);
+    const response = await axios.get(`https://cabservice-v1.herokuapp.com/product/london`);
     const result = response.data;
     if (result.message) {
       alert("Email needed");

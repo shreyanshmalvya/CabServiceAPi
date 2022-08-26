@@ -8,7 +8,7 @@ const cors = require('cors')
 app.use(cors())
 app.use((req,res,next) =>{
     console.log("came here")
-    res.header('Access-Control-Allow-Origin', '*, https://cabservice-v1.web.app/');
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     //for options request
     if(req.method === 'OPTIONS'){
