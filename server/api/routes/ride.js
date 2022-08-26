@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require('axios');
 const fare = require('../modules/fare');
 
-router.post('/:city/:vehicle_type/:orgins/:destinations', (req, res) => {
+router.post('/:city/:vehicle_type/:origins/:destinations', (req, res) => {
     const city_name = req.params.city;
     const vehicle_type = req.params.vehicle_type;
     const origins = req.params.origins;

@@ -15,8 +15,9 @@ function App() {
 
   const getData = async (e) => {
     e.preventDefault();
-    const response = await axios.get(`https://cabservice-v1.herokuapp.com/product/london`);
+    const response = await axios.get(`https://cabservice-v1.herokuapp.com/ride/${city}/${vehicleType}/${origins}/${destinations}`);
     const result = response.data;
+    console.log(result);
     if (result.message) {
       alert("Email needed");
     } else {
